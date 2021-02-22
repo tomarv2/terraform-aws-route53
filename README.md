@@ -1,7 +1,6 @@
 # terraform-aws-route53
 Terraform module for [Route53](https://aws.amazon.com/route53/)
 
-
 ## Versions
 
 - Module tested for Terraform 0.14.
