@@ -12,6 +12,7 @@ variable "prjid" {
 
 variable "profile_to_use" {
   description = "Getting values from ~/.aws/credentials"
+  default     = "default"
 }
 
 variable "aws_region" {
@@ -21,11 +22,12 @@ variable "aws_region" {
 
 variable "dns_name" {
   description = "DNS name"
-  default = ""
+  default     = ""
 }
 
 variable "type_of_record" {
   description = "type of DNS record"
+  default     = "A"
 }
 
 variable "ttl" {
@@ -35,8 +37,8 @@ variable "ttl" {
 
 variable "deploy_route53" {
   description = "feature flag, true or false"
-  default = false
-  type = bool
+  default     = false
+  type        = bool
 }
 
 variable "lb_zoneid" {}
