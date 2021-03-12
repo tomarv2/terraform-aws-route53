@@ -69,7 +69,6 @@ tf -cloud aws apply -var-file <path to .tfvars file>
 tf -cloud aws destroy -var-file <path to .tfvars file>
 ```
 
-
 > ❗️ **Important** - Two variables are required for using `tf` package:
 >
 > - teamid
