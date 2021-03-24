@@ -1,8 +1,6 @@
 module "route53" {
   source = "../"
 
-  deploy_route53 = false
-  email          = "demo@demo.com"
   lb_zoneid      = "ABC123"
   account_id     = "123456789012"
   dns_name       = "demo.demo.com"
