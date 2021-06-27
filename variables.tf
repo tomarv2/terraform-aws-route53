@@ -1,16 +1,13 @@
 variable "teamid" {
   description = "(Required) name of the team/group e.g. devops, dataengineering. Should not be changed after running 'tf apply'"
+  type        = string
 }
 
 variable "prjid" {
   description = "(Required) name of the project/stack e.g: mystack, nifieks, demoaci. Should not be changed after running 'tf apply'"
+  type        = string
 }
-
-variable "profile_to_use" {
-  description = "Getting values from ~/.aws/credentials"
-  default     = "default"
-}
-
+/*
 variable "name" {
   type        = string
   default     = ""
@@ -41,24 +38,12 @@ variable "attributes" {
   description = "Additional attributes (e.g. `1`)."
 }
 
-variable "managedby" {
-  type        = string
-  default     = "anmol@clouddrove.com"
-  description = "ManagedBy, eg 'CloudDrove' or 'AnmolNagpal'."
-}
-
 variable "delimiter" {
   type        = string
   default     = "-"
   description = "Delimiter to be used between `organization`, `environment`, `name` and `attributes`."
 }
-
-variable "tags" {
-  type        = map(any)
-  default     = {}
-  description = "Additional tags (e.g. map(`BusinessUnit`,`XYZ`)."
-}
-
+*/
 variable "private_enabled" {
   type        = bool
   default     = false
@@ -76,7 +61,7 @@ variable "public_enabled" {
   default     = false
   description = "Whether to create public Route53 zone."
 }
-
+/*
 variable "record_set_enabled" {
   type        = bool
   default     = false
@@ -106,7 +91,7 @@ variable "weighted_enabled" {
   default     = false
   description = "Whether to create Route53 record set."
 }
-
+*/
 variable "comment" {
   type        = string
   default     = null
@@ -124,13 +109,13 @@ variable "delegation_set_id" {
   default     = ""
   description = "The ID of the reusable delegation set whose NS records you want to assign to the hosted zone. Conflicts with vpc as delegation sets can only be used for public zones."
 }
-
+/*
 variable "vpc_id" {
   type        = string
   default     = ""
   description = "VPC ID."
 }
-
+*/
 variable "types" {
   type        = list(any)
   default     = []
@@ -172,27 +157,31 @@ variable "alias" {
   default     = { "names" = [], "zone_ids" = [], "evaluate_target_healths" = [] }
   description = "An alias block. Conflicts with ttl & records. Alias record documented below."
 }
-
+/*
 variable "failover_routing_policies" {
+    type = string
   default     = null
   description = "A block indicating the routing behavior when associated health check fails. Conflicts with any other routing policy. Documented below."
 }
 
 variable "geolocation_routing_policies" {
+    type = string
   default     = null
   description = "A block indicating a routing policy based on the geolocation of the requestor. Conflicts with any other routing policy. Documented below."
 }
 
 variable "latency_routing_policies" {
+    type = string
   default     = null
   description = "A block indicating a routing policy based on the latency between the requestor and an AWS region. Conflicts with any other routing policy. Documented below."
 }
 
 variable "weighted_routing_policies" {
+    type = string
   default     = null
   description = "A block indicating a weighted routing policy. Conflicts with any other routing policy. Documented below."
 }
-
+*/
 variable "multivalue_answer_routing_policies" {
   type        = list(any)
   default     = []
@@ -204,7 +193,7 @@ variable "allow_overwrites" {
   default     = []
   description = "Allow creation of this record in Terraform to overwrite an existing record, if any. This does not affect the ability to update the record in Terraform and does not prevent other resources within Terraform or manual Route 53 changes outside Terraform from overwriting this record. false by default. This configuration is not recommended for most environments."
 }
-
+/*
 variable "secondary_vpc_id" {
   type        = string
   default     = ""
@@ -216,14 +205,20 @@ variable "secondary_vpc_region" {
   default     = ""
   description = "The VPC's region. Defaults to the region of the AWS provider."
 }
-
-variable "account_id" {}
-
-variable "aws_region" {
-  default = "us-west-2"
+*/
+variable "account_id" {
+  description = "aws account id"
+  type        = string
 }
 
 variable "domain_name" {
   description = "The domain name"
   default     = null
+  type        = string
+}
+
+variable "aws_region" {
+  description = "aws region to create resources"
+  default     = "us-west-2"
+  type        = string
 }
