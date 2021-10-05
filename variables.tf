@@ -222,3 +222,9 @@ variable "aws_region" {
   default     = "us-west-2"
   type        = string
 }
+
+variable "vpc_id" {
+  default     = null
+  description = "The VPC to associate with the private hosted zone."
+  type        = string
+}
