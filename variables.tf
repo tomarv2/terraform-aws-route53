@@ -109,14 +109,8 @@ variable "delegation_set_id" {
   default     = ""
   description = "The ID of the reusable delegation set whose NS records you want to assign to the hosted zone. Conflicts with vpc as delegation sets can only be used for public zones."
 }
-/*
-variable "vpc_id" {
-  type        = string
-  default     = ""
-  description = "VPC ID."
-}
-*/
-variable "types" {
+
+variable "types_of_records" {
   type        = list(any)
   default     = []
   description = "The record type. Valid values are A, AAAA, CAA, CNAME, MX, NAPTR, NS, PTR, SOA, SPF, SRV and TXT. "

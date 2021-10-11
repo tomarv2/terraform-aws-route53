@@ -211,7 +211,7 @@ Please refer to examples directory [link](examples) for references.
 | <a name="input_set_identifiers"></a> [set\_identifiers](#input\_set\_identifiers) | Unique identifier to differentiate records with routing policies from one another. Required if using failover, geolocation, latency, or weighted routing policies documented below. | `list(any)` | `[]` | no |
 | <a name="input_teamid"></a> [teamid](#input\_teamid) | (Required) name of the team/group e.g. devops, dataengineering. Should not be changed after running 'tf apply' | `string` | n/a | yes |
 | <a name="input_ttls"></a> [ttls](#input\_ttls) | (Required for non-alias records) The TTL of the record. | `list(any)` | `[]` | no |
-| <a name="input_types"></a> [types](#input\_types) | The record type. Valid values are A, AAAA, CAA, CNAME, MX, NAPTR, NS, PTR, SOA, SPF, SRV and TXT. | `list(any)` | `[]` | no |
+| <a name="input_types_of_records"></a> [types\_of\_records](#input\_types\_of\_records) | The record type. Valid values are A, AAAA, CAA, CNAME, MX, NAPTR, NS, PTR, SOA, SPF, SRV and TXT. | `list(any)` | `[]` | no |
 | <a name="input_values"></a> [values](#input\_values) | (Required for non-alias records) A string list of records. To specify a single record value longer than 255 characters such as a TXT record for DKIM, add "" inside the Terraform configuration string (e.g. "first255characters""morecharacters"). | `list(any)` | `[]` | no |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | The VPC to associate with the private hosted zone. | `string` | `null` | no |
 
