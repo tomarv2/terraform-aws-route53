@@ -23,7 +23,7 @@
 ## Versions
 
 - Module tested for Terraform 1.0.1.
-- AWS provider version [3.47.0](https://registry.terraform.io/providers/hashicorp/aws/latest).
+- AWS provider version [3.61.0](https://registry.terraform.io/providers/hashicorp/aws/latest).
 - `main` branch: Provider versions not pinned to keep up with Terraform releases.
 - `tags` releases: Tags are pinned with versions (use <a href="https://github.com/tomarv2/terraform-aws-route53/tags" alt="GitHub tag">
         <img src="https://img.shields.io/github/v/tag/tomarv2/terraform-aws-route53" /></a> ).
@@ -44,7 +44,7 @@ terraform destroy -var='teamid=tryme' -var='prjid=project1'
 
 #### Recommended method (stores remote state in S3 using `prjid` and `teamid` to create directory structure):
 
-- Create python 3.6+ virtual environment
+- Create python 3.8+ virtual environment
 ```
 python3 -m venv <venv name>
 ```
@@ -165,14 +165,14 @@ Please refer to examples directory [link](examples) for references.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.1 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.47 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.61 |
 | <a name="requirement_template"></a> [template](#requirement\_template) | ~> 2.2.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.47 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.61 |
 
 ## Modules
 
@@ -199,7 +199,7 @@ Please refer to examples directory [link](examples) for references.
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | aws region to create resources | `string` | `"us-west-2"` | no |
 | <a name="input_comment"></a> [comment](#input\_comment) | A comment for the hosted zone. Defaults to 'Managed by Terraform'. | `string` | `null` | no |
 | <a name="input_delegation_set_id"></a> [delegation\_set\_id](#input\_delegation\_set\_id) | The ID of the reusable delegation set whose NS records you want to assign to the hosted zone. Conflicts with vpc as delegation sets can only be used for public zones. | `string` | `""` | no |
-| <a name="input_deploy_route53"></a> [deploy\_route53](#input\_deploy\_route53) | Whether to create Route53 record set. | `bool` | `true` | no |
+| <a name="input_deploy_route53"></a> [deploy\_route53](#input\_deploy\_route53) | feature flag, true or false | `bool` | `true` | no |
 | <a name="input_domain_name"></a> [domain\_name](#input\_domain\_name) | The domain name | `string` | `null` | no |
 | <a name="input_force_destroy"></a> [force\_destroy](#input\_force\_destroy) | Whether to destroy all records (possibly managed outside of Terraform) in the zone when destroying the zone. | `bool` | `true` | no |
 | <a name="input_health_check_ids"></a> [health\_check\_ids](#input\_health\_check\_ids) | The health check the record should be associated with. | `list(any)` | `[]` | no |

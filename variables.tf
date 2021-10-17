@@ -53,7 +53,7 @@ variable "private_enabled" {
 variable "deploy_route53" {
   type        = bool
   default     = true
-  description = "Whether to create Route53 record set."
+  description = "feature flag, true or false"
 }
 
 variable "public_enabled" {
