@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## [v0.0.6](https://github.com/tomarv2/terraform-aws-route53/releases/tag/v0.0.6) - 2021-10-19 15:29:36
+
+Release for version refs/tags/v0.0.6. Please check CHANGELOG.md for more information.
+
 ## [v0.0.5](https://github.com/tomarv2/terraform-aws-route53/releases/tag/v0.0.5) - 2021-10-19 15:29:36
 
 Release for version refs/tags/v0.0.5. Please check CHANGELOG.md for more information.
