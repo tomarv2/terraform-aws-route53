@@ -6,7 +6,7 @@ resource "aws_route53_zone" "private" {
   force_destroy = var.force_destroy
   tags          = merge(local.shared_tags)
   vpc {
-    vpc_id = var.vpc_id != null ? var.vpc_id : module.global.vpc[var.account_id][var.aws_region]
+    vpc_id = var.vpc_id != null ? var.vpc_id : module.global.vpc[local.account_info][local.override_aws_region]
   }
 }
 

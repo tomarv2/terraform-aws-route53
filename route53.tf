@@ -1,5 +1,7 @@
 locals {
-  zone_id = var.private_enabled != true ? module.global.route53_zoneid[var.account_id] : aws_route53_zone.private.*.zone_id[0]
+  account_info = var.account_id != null ? account_id : data.aws_caller_identity.current.account_id
+  override_aws_region = var.aws_region != null ? var.aws_region : data.aws_region.current.name
+  zone_id = var.private_enabled != true ? module.global.route53_zoneid[local.account_info] : aws_route53_zone.private.*.zone_id[0]
 }
 
 resource "aws_route53_record" "default" {
@@ -19,7 +21,7 @@ resource "aws_route53_record" "default" {
 resource "aws_route53_record" "alias" {
   count = var.deploy_route53 && length(var.alias) > 0 && length(var.alias["names"]) > 0 ? length(var.alias["names"]) : 0
 
-  zone_id                          = module.global.route53_zoneid[var.account_id]
+  zone_id                          = module.global.route53_zoneid[local.account_info]
   name                             = element(var.names, count.index)
   type                             = element(var.types_of_records, count.index)
   set_identifier                   = length(var.set_identifiers) > 0 ? element(var.set_identifiers, count.index) : ""
