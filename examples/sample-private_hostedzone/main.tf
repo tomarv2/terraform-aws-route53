@@ -2,23 +2,22 @@ terraform {
   required_version = ">= 1.0.1"
   required_providers {
     aws = {
-      version = ">= 3.63"
+      version = "~> 3.63"
     }
   }
 }
 
 
 provider "aws" {
-  region = var.aws_region
+  region = var.region
 }
 
 module "route53" {
   source = "../../"
 
   private_enabled = true
-  account_id      = "<account_id>>"
-  aws_region      = var.aws_region
-  domain_name     = "deleme.com"
+
+  domain_name = "deleme.com"
   names = [
     "delme-vt.",
     "delme-vt1."
