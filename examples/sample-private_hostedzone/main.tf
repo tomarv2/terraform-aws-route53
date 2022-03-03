@@ -1,6 +1,15 @@
+terraform {
+  required_version = ">= 1.0.1"
+  required_providers {
+    aws = {
+      version = ">= 3.63"
+    }
+  }
+}
+
+
 provider "aws" {
-  region  = "us-west-2"
-  profile = "default"
+  region = var.aws_region
 }
 
 module "route53" {
@@ -8,7 +17,7 @@ module "route53" {
 
   private_enabled = true
   account_id      = "<account_id>>"
-  aws_region      = "us-east-2"
+  aws_region      = var.aws_region
   domain_name     = "deleme.com"
   names = [
     "delme-vt.",
