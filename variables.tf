@@ -17,7 +17,7 @@ variable "private_enabled" {
 variable "deploy_route53" {
   type        = bool
   default     = true
-  description = "feature flag, true or false"
+  description = "Feature flag, true or false"
 }
 
 variable "public_enabled" {
@@ -96,16 +96,6 @@ variable "allow_overwrites" {
   type        = list(any)
   default     = []
   description = "Allow creation of this record in Terraform to overwrite an existing record, if any. This does not affect the ability to update the record in Terraform and does not prevent other resources within Terraform or manual Route 53 changes outside Terraform from overwriting this record. false by default. This configuration is not recommended for most environments."
-}
-
-variable "account_id" {
-  description = "aws account id to deploy resources"
-  type        = string
-}
-
-variable "aws_region" {
-  description = "aws region to deploy resources"
-  type        = string
 }
 
 variable "domain_name" {

@@ -2,19 +2,20 @@ terraform {
   required_version = ">= 1.0.1"
   required_providers {
     aws = {
-      version = ">= 3.63"
+      version = "~> 3.63"
     }
   }
 }
 
+
 provider "aws" {
-  region = var.aws_region
+  region = var.region
 }
 
 module "route53" {
   source = "../../"
 
-  account_id     = "<account_id>"
+
   public_enabled = true
   domain_name    = "demo.rumse.com"
   names = [
