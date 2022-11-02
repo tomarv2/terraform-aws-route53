@@ -3,12 +3,7 @@ output "route53_fdqn" {
   value       = module.route53.route53_fdqn
 }
 
-output "public_zone_id" {
+output "zone_id" {
   description = "Public zone id"
-  value       = module.route53.public_zone_id
-}
-
-output "private_zone_id" {
-  description = "Private zone id"
-  value       = module.route53.private_zone_id
+  value       = module.route53.zone_id
 }
