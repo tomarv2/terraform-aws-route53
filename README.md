@@ -88,6 +88,7 @@ tf -c=aws destroy -var='teamid=foo' -var='prjid=bar'
 
 **Note:** Read more on [tfremote](https://github.com/tomarv2/tfremote)
 
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 No requirements.
